@@ -1,4 +1,4 @@
-package main
+package node
 
 import (
 	"archive/zip"
@@ -24,7 +24,7 @@ func GetNodeLtsDownloadUri() string {
 	return fmt.Sprintf("https://nodejs.org/dist/%s/node-%s-%s-%s.zip", version, version, soName, arch)
 }
 
-func downloadLatestNodeLts() {
+func DownloadLatestNodeLts() {
 	os.RemoveAll("bin")
 	fmt.Println("Downloading latest node lts")
 
@@ -98,10 +98,13 @@ func extractNodeLts(file string) {
 	r.Close()
 }
 
-func main() {
-	// FindNodeJsLtsVersion()
-	// uri := GetNodeLtsDownloadUri()
-	// fmt.Println(uri)
+// func main() {
+// FindNodeJsLtsVersion()
+// uri := GetNodeLtsDownloadUri()
+// fmt.Println(uri)
 
-	downloadLatestNodeLts()
-}
+//downloadLatestNodeLts()
+// var config = ini.LoadMagicIni("magic.ini")
+
+// fmt.Println(config)
+// }
